@@ -89,7 +89,7 @@ const options = {
     title: { display: true, text: "Graphical Views with Animations" },
   },
   animation: {
-    duration: 2000, // 2 seconds
+    duration: 3000, // 2 seconds
     easing: "easeOutBounce",
     // All possihle easing here.
     // linear, easeInQuad, easeOutQuad, easeInOutQuad, easeInCubic, easeOutCubic, easeInOutCubic, 

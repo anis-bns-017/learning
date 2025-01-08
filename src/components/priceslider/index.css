@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Trebuchet MS, sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply bg-slate-50;
+}
+
+.customShadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* user table */
+.userTable {
+  @apply bg-white;
+}
+.userTable th {
+  @apply border text-base font-medium;
+}
+
+.userTable td {
+  @apply border text-base text-center;
+}
+
+.pcBuilder {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fcfcfc;
+  font-family: sans-serif;
+  text-decoration: none;
+  background: linear-gradient(#0115ca, #4d55af) repeat-x #fff;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto;
+  background-size: 200% 100%;
+  background-position-x: 0;
+  background-position-y: 3em;
+  transition: background-position-y 0.5s ease;
+  animation: waveAnimation 4s infinite linear;
+  animation-play-state: running;
+  animation-play-state: paused;
+}
+
+.pcBuilder:hover {
+  background-position-x: 0;
+  background-position-y: 0;
+  animation-play-state: running;
+}
+
+@keyframes waveAnimation {
+  from {
+    background-position-x: 0%;
+  }
+  to {
+    background-position-x: 200%;
+  }
+}
+
+/* scrollbar Hidden */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Define the keyframes for the blink animation */
+@keyframes blink {
+  0%,
+  100% {
+    color: tomato;
+    opacity: 1;
+  } /* Fully visible at the start and end */
+  50% {
+    opacity: 0;
+  } /* Invisible at the midpoint */
+}
+
+/* Apply the animation to the icon */
+.blink-icon {
+  animation: blink 2s infinite; /* 1-second duration, infinite loop */
+}
+
+.slider {
+  position: relative;
+}
+
+.track-slider,
+.range-slider,
+.slider-left-val,
+.slider-right-value {
+  position: absolute;
+}
+
+.track-slider,
+.range-slider {
+  border-radius: 4px;
+  height: 6px;
+}
+
+.track-slider {
+  /* background-color: #022140; */
+  width: 100%;
+  z-index: 1;
+}
+
+.range-slider {
+  z-index: 2;
+}
+
+.slider-left-value {
+  left: 6px;
+}
+
+.slider-right-value {
+  right: -4px;
+}
+
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  outline: none;
+}
+
+/* Length of left thumb */
+.thumb-left {
+  z-index: 3;
+  width: 200px;
+}
+
+/* lenght of right thumb */
+.thumb-right {
+  z-index: 4;
+  width: 200px;
+}
+
+.thumb::-webkit-slider-thumb {
+  background-color: #0a0a0a;
+  border-radius: 50%;
+  /* box-shadow: 0 0 1px 1px #f50707; */
+  border: 3px solid #ff0303;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  margin-left: 45px;
+  margin-top: -30px;
+  pointer-events: all;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.thumb::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.thumb::-moz-range-thumb {
+  background-color: #0a0a0a;
+  border-radius: 50%;
+  /* box-shadow: 0 0 1px 1px #f50707; */
+  border: 4px solid tomato;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  margin-top: 4.5px;
+  pointer-events: all;
+  position: relative;
+}
