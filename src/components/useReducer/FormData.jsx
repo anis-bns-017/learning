@@ -1,18 +1,26 @@
 import React, { useReducer } from "react";
 
-function formReducer(state, action) {
+const initialState = {
+  name: "",
+  email: "",
+};
+
+function reducer(state, action) { 
   switch (action.type) {
     case "updateField":
-      return { ...state, [action.field]: action.value };
+      return {
+        ...state,
+        [action.field]: action.value,
+      };
     case "reset":
-      return { name: "", email: "" };
+      return initialState;
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      throw new Error("Unknown action type");
   }
 }
 
-function FormExample() {
-  const [state, dispatch] = useReducer(formReducer, { name: "", email: "" });
+function Form() {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,40 +28,38 @@ function FormExample() {
   };
 
   return (
-    <form className="p-6 bg-gray-100 flex flex-col gap-4 max-w-sm mx-auto">
+    <div className="p-6 bg-gray-100 min-h-screen flex flex-col items-center">
+      <h1 className="text-2xl font-bold mb-4">Form</h1>
       <input
-        type="text"
         name="name"
         value={state.name}
         onChange={handleChange}
         placeholder="Name"
-        className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-gray-300 p-2 mb-4 w-64"
       />
       <input
-        type="email"
         name="email"
         value={state.email}
         onChange={handleChange}
         placeholder="Email"
-        className="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-gray-300 p-2 mb-4 w-64"
       />
-      <div className="flex gap-4">
-        <button
-          type="button"
-          onClick={() => dispatch({ type: "reset" })}
-          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-        >
-          Reset
-        </button>
-        <button
-          type="submit"
-          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-        >
-          Submit
-        </button>
+      <button
+        onClick={() => dispatch({ type: "reset" })}
+        className="bg-blue-500 text-white py-2 px-4 rounded"
+      >
+        Reset
+      </button>
+      <div className="mt-4">
+        <p>
+          <strong>Name:</strong> {state.name}
+        </p>
+        <p>
+          <strong>Email:</strong> {state.email}
+        </p>
       </div>
-    </form>
+    </div>
   );
 }
 
-export default FormExample;
+export default Form;
