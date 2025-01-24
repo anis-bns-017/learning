@@ -14,38 +14,44 @@ import ExpensiveComputation from "./components/UseMomoWithUseCallback/ExpensiveC
 import FilteredListWithUseMemo from "./components/UseMomoWithUseCallback/FilteredList";
 import AmazingTool from "./components/amazingTool/AmazingTool";
 import AllChartTypes from "./components/barchart/BarChartWithFilter";
+import TaskManager from "./components/projects/taskmanager/TaskManager";
+import Todo from "./components/projects/Todo/MainTodo";
 
 const App = () => {
   return (
     <>
-      {/* Learning useState */}
+      {/* Learning useState
       <ProfileForm />
       <FetchData />
       <WindowResize />
-      <MouseTracker />
+      <MouseTracker /> */}
 
       {/* Learning useReducer */}
-      <p className="text-5xl font-bold">Learning useReducer</p>
+      {/* <p className="text-5xl font-bold">Learning useReducer</p>
       <CounterForReducer />
       <FormExample />
       <TodoApp />
-      <DoubleReducer />
+      <DoubleReducer /> */}
 
       {/* Some Tools */}
-      <AmazingTool />
+      {/* <AmazingTool /> */}
 
       {/* Learning useMemo */}
-      <p className="text-5xl font-bold">Learning </p>
+      {/* <p className="text-5xl font-bold">Learning </p>
       <ExpensiveComputation />
-      <FilteredListWithUseMemo />
+      <FilteredListWithUseMemo /> */}
 
       {/* Learning useRef */}
-      <FilteredList />
+      {/* <FilteredList />
       <Timer />
-      <AnimateBox />
+      <AnimateBox /> */}
+
       {/* This is everything of barChart */}
       {/* <GraphViews /> */}
-      <AllChartTypes />
+      {/* <AllChartTypes /> */}
+
+      {/* Doing project */}
+      <Todo />
     </>
   );
 };
